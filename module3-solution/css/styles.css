@@ -1,22 +1,89 @@
-/* Global body spacing */
 body {
   font-family: Arial, sans-serif;
 }
 
-/* Tall menu section */
-.menu-section {
-  background-color: #f2f2f2;
-  height: 1000px;
+/* Navbar */
+.custom-navbar {
+  background-color: #cfcfcf;
+  border: 1px solid #000;
+}
+
+/* Heading */
+.menu-title {
+  font-weight: bold;
+  margin: 40px 0;
+}
+
+/* FLEX FIX FOR EQUAL HEIGHT BOXES */
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-row > div {
+  display: flex;
+}
+
+/* Menu cards */
+.menu-box {
+  background-color: #a9a9a9;
+  border: 2px solid #000;
   padding: 20px;
-  margin-top: 20px;
+  margin-bottom: 25px;
+  width: 100%;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
-/* Mobile dropdown styling */
-#mobile-menu {
-  background-color: #dddddd;
+/* Dessert section */
+.dessert-box {
+  min-height: 220px;
 }
 
-/* Center text inside mobile menu items */
-#mobile-menu ul li a {
-  text-align: center;
+/* Smooth animation */
+.menu-box {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Lift + shadow on hover */
+.menu-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.35);
+  background-color: #b5b5b5;
+}
+
+/* Title highlight on hover */
+.menu-box:hover h2 {
+  color: #222;
+  font-weight: bold;
+}
+
+/* Subtle top accent bar */
+.menu-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background: #444;
+  transition: 0.3s;
+}
+
+/* Accent colors per card */
+.col-md-4:nth-child(1) .menu-box::before {
+  background: #c0392b; /* chicken red */
+}
+
+.col-md-4:nth-child(2) .menu-box::before {
+  background: #d35400; /* beef orange */
+}
+
+.col-md-4:nth-child(3) .menu-box::before {
+  background: #27ae60; /* sushi green */
+}
+
+/* Dessert accent */
+.dessert-box::before {
+  background: #8e44ad;
 }
